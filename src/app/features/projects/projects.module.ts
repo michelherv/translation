@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { ProjectsRoutingModule } from './projects-routing.module';
-import { ListComponent } from './list/list.component';
+import { MatButtonModule, MatCardModule } from '@angular/material';
+import { ProjectsRoutingModule } from '@features/projects/projects-routing.module';
+import { ListComponent } from '@features/projects/list/list.component';
 
 
 @NgModule({
   imports: [
     CommonModule,
-    ProjectsRoutingModule
+    MatButtonModule,
+    MatCardModule,
+    ProjectsRoutingModule,
   ],
   declarations: [ ListComponent ]
 })

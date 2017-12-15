@@ -1,18 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { CoreRoutingModule } from './core-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
-import { CoreComponent } from './core.component';
+import { CoreComponent } from '@core/core.component';
+import { CoreRoutingModule } from '@core/core-routing.module';
 
 
 @NgModule({
+  bootstrap: [ CoreComponent ],
+  declarations: [ CoreComponent ],
   imports: [
     BrowserModule,
     CommonModule,
     CoreRoutingModule
   ],
-  declarations: [CoreComponent],
-  bootstrap: [CoreComponent]
 })
 export class CoreModule { }
