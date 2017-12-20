@@ -1,3 +1,100 @@
-<p>
-  remove works!
-</p>
+<div class="row">
+  <div class="d-none d-md-block col-md-2"></div>
+  <div class="col-xs-12 col-md-8">
+    <div class="row">
+      <div class="col-auto">
+        <a
+          mat-fab
+          color="primary"
+          [routerLink]="[ '..', 'reading' ]"
+        ><mat-icon>arrow_back</mat-icon></a>
+      </div>
+
+      <!-- titre de la page -->
+      <div class="col-auto">
+        <h1 class="mat-display-2 font-effect-shadow-multiple">
+          Suppression du projet
+        </h1>
+      </div>
+    </div>
+
+
+    <form (ngSubmit)="doSubmit(project)" novalidate>
+      <mat-card>
+        <!-- identifiant du projet -->
+        <mat-card-subtitle class="text-right">{{ project.id }}</mat-card-subtitle>
+
+        <mat-card-content>
+          <!-- nom du projet -->
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-4">
+              Nom
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-8">
+              {{ project.name }}
+            </div>
+          </div>
+
+
+          <!-- date de création du projet -->
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-4">
+              Date de création
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-8">
+              {{ project.createdDate | date:'long' }}
+            </div>
+          </div>
+
+
+          <!-- projet créé par -->
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-4">
+              Créé par
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-8">
+              {{ project.createdBy }}
+            </div>
+          </div>
+
+
+          <!-- date de dernière maj du projet -->
+          <div class="row align-items-center text-danger">
+            <div class="col-1">
+              <mat-icon>warning</mat-icon>
+            </div>
+            <div class="col-11">
+              <p>
+                Cette action entraînera des conséquences irreversibles.<br>
+                Les groupes et les traductions associés seront définitivement supprimés.
+              </p>
+            </div>
+          </div>
+
+        </mat-card-content>
+
+
+        <!-- actions sur le projet -->
+        <mat-card-actions align="end">
+          <a
+            mat-button
+            [routerLink]="[ '..', 'reading' ]"
+          >ANNULER</a>
+          <button
+            type="submit"
+            mat-raised-button
+            color="warn"
+            class="text-center"
+          >
+            <span *ngIf="!pending">SUPPRIMER</span>
+            <mat-spinner
+              *ngIf="pending"
+              diameter="20"
+              color="accent"
+            ></mat-spinner>
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </form>
+  </div>
+</div>

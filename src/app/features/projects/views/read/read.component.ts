@@ -11,6 +11,7 @@ import { ProjectDto } from '@features/projects/dto/project.dto';
 export class ReadComponent implements OnInit {
   project: ProjectDto;
 
+
   // @formatter:off
   constructor(
     public route: ActivatedRoute

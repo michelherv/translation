@@ -3,7 +3,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {
-  MatButtonModule, MatCardModule, MatIconModule, MatInputModule,
+  MatButtonModule,
+  MatCardModule,
+  MatIconModule,
+  MatInputModule,
   MatProgressSpinnerModule
 } from '@angular/material';
 import { ProjectsRoutingModule } from '@features/projects/projects-routing.module';
@@ -11,6 +14,8 @@ import { ProjectService } from '@features/projects/services/project.service';
 import { ListComponent } from '@features/projects/views/list/list.component';
 import { ListResolver } from '@features/projects/views/list/list.resolver';
 import { ReadResolver } from '@features/projects/views/read/read.resolver';
+import { RemoveResolver } from '@features/projects/views/remove/remove.resolver';
+import { UpdateResolver } from '@features/projects/views/update/update.resolver';
 import { CreateComponent } from './views/create/create.component';
 import { ReadComponent } from './views/read/read.component';
 import { RemoveComponent } from './views/remove/remove.component';
@@ -40,7 +45,9 @@ import { UpdateComponent } from './views/update/update.component';
   providers: [
     ProjectService,
     ListResolver,
-    ReadResolver
+    ReadResolver,
+    UpdateResolver,
+    RemoveResolver
   ]
 })
 export class ProjectsModule {

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProjectDto } from '@features/projects/dto/project.dto';
 import { ProjectService } from '@features/projects/services/project.service';
-import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -13,6 +13,7 @@ export class CreateComponent implements OnInit {
   project: ProjectDto;
   pending: boolean;
 
+
   // @formatter:off
   constructor(
     private projectService: ProjectService,
@@ -20,6 +21,7 @@ export class CreateComponent implements OnInit {
     private router: Router
   ) { }
   // @formatter:on
+
 
   ngOnInit() {
     this.project = new ProjectDto({
@@ -29,11 +31,12 @@ export class CreateComponent implements OnInit {
     });
   }
 
+
   doSubmit(project: ProjectDto) {
     this.pending = true;
     this.projectService.create(project).subscribe(response => {
       this.pending = false;
-      this.router.navigate([ '..', response.id, 'reading' ], {
+      this.router.navigate(['..', response.id, 'reading'], {
         relativeTo: this.route
       });
     });

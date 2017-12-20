@@ -36,11 +36,10 @@ export class AbstractService<T extends AbstractDto> {
   }
 
 
-  public remove(id: string, query?: object): Observable<T> {
+  public remove(id: string, query?: object): Observable<object> {
     const url = `${this.url}/${id}?${this.getQueryString(query)}`;
 
-    return this.http.get<object>(url).pipe(
-      map(item => new this.factory(item)),
+    return this.http.delete(url).pipe(
       catchError(<(error: any) => Observable<T>>this.handleError(`DELETE ${url}`))
     );
   }

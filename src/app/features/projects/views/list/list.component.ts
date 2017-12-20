@@ -10,6 +10,7 @@ import { ProjectDto } from '@features/projects/dto/project.dto';
 export class ListComponent implements OnInit {
   projects: ProjectDto[];
 
+
   // @formatter:off
   constructor(
     public route: ActivatedRoute

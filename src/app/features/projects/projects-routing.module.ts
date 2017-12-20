@@ -5,7 +5,9 @@ import { ListComponent } from '@features/projects/views/list/list.component';
 import { ListResolver } from '@features/projects/views/list/list.resolver';
 import { ReadComponent } from '@features/projects/views/read/read.component';
 import { ReadResolver } from '@features/projects/views/read/read.resolver';
+import { RemoveResolver } from '@features/projects/views/remove/remove.resolver';
 import { UpdateComponent } from '@features/projects/views/update/update.component';
+import { UpdateResolver } from '@features/projects/views/update/update.resolver';
 import { RemoveComponent } from './views/remove/remove.component';
 
 
@@ -26,11 +28,13 @@ const routes: Routes = [
   },
   {
     path: ':projectId/updating',
-    component: UpdateComponent
+    component: UpdateComponent,
+    resolve: { project: UpdateResolver }
   },
   {
     path: ':projectId/removing',
-    component: RemoveComponent
+    component: RemoveComponent,
+    resolve: { project: RemoveResolver }
   }
 ];
 

@@ -20,17 +20,10 @@
 
 
     <mat-card>
-      <mat-card-content>
-        <!-- identifiant du projet -->
-        <div class="row">
-          <div class="col-xs-12 col-sm-6 col-md-4">
-            Identifiant
-          </div>
-          <div class="col-xs-12 col-sm-6 col-md-8">
-            {{ project.id }}
-          </div>
-        </div>
+      <!-- identifiant du projet -->
+      <mat-card-subtitle class="text-right">{{ project.id }}</mat-card-subtitle>
 
+      <mat-card-content>
 
         <!-- nom du projet -->
         <div class="row">
