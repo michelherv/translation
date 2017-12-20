@@ -4,6 +4,11 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
+    path: '',
+    redirectTo: 'projects',
+    pathMatch: 'full'
+  },
+  {
     path: 'projects',
     loadChildren: '../features/projects/projects.module#ProjectsModule'
   },
@@ -14,11 +19,6 @@ const routes: Routes = [
   {
     path: 'projects/:projectId/groups/:groupId/translations',
     loadChildren: '../features/translations/translations.module#TranslationsModule'
-  },
-  {
-    path: '',
-    redirectTo: 'projects',
-    pathMatch: 'full'
   }
 ];
 

@@ -1,0 +1,9 @@
+@import "../../../../../assets/styles/bootstrap-mixins";
+
+.mat-display-2 {
+  padding-top: 7px;
+}
+
+mat-card .row:not(:last-child) {
+  margin-bottom: $grid-gutter-width;
+}

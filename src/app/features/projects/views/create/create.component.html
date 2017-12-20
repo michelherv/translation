@@ -1,0 +1,66 @@
+<div class="row">
+  <div class="d-none d-md-block col-md-2"></div>
+  <div class="col-xs-12 col-md-8">
+    <div class="row">
+      <div class="col-auto">
+        <a
+          mat-fab
+          color="primary"
+          [routerLink]="[ '..' ]"
+        ><mat-icon>arrow_back</mat-icon></a>
+      </div>
+
+      <!-- titre de la page -->
+      <div class="col-auto">
+        <h1 class="mat-display-2 font-effect-shadow-multiple">
+          Nouveau projet
+        </h1>
+      </div>
+    </div>
+
+
+    <form (ngSubmit)="doSubmit(project)" novalidate>
+      <mat-card>
+
+        <!-- nom du projet -->
+        <mat-card-content>
+          <mat-form-field [hintLabel]="input.maxLength + ' caractères maximum'">
+
+            <input
+              name="name"
+              required
+              matInput
+              maxlength="20"
+              placeholder="Entrez le nom du projet"
+              [(ngModel)]="project.name"
+              #input>
+            <mat-hint align="end">{{ input.value?.length || 0 }} / {{ input.maxLength }}</mat-hint>
+
+          </mat-form-field>
+        </mat-card-content>
+
+
+        <!-- actions sur le projet -->
+        <mat-card-actions align="end">
+          <button
+            type="reset"
+            mat-button
+          >ANNULER</button>
+          <button
+            type="submit"
+            mat-raised-button
+            color="primary"
+            class="text-center"
+          >
+            <span *ngIf="!pending">AJOUTER</span>
+            <mat-spinner
+              *ngIf="pending"
+              diameter="20"
+              color="accent"
+            ></mat-spinner>
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </form>
+  </div>
+</div>

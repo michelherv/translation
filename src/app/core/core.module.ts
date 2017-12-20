@@ -1,17 +1,18 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
-import { CoreComponent } from '@core/core.component';
 import { CoreRoutingModule } from '@core/core-routing.module';
+import { CoreComponent } from '@core/core.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
-  bootstrap: [ CoreComponent ],
-  declarations: [ CoreComponent ],
+  bootstrap: [CoreComponent],
+  declarations: [CoreComponent],
   imports: [
     BrowserModule,
-    CommonModule,
-    CoreRoutingModule
+    CoreRoutingModule,
+    BrowserAnimationsModule
   ],
 })
-export class CoreModule { }
+export class CoreModule {
+}

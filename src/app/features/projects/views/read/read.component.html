@@ -1,0 +1,105 @@
+<div class="row">
+  <div class="d-none d-md-block col-md-2"></div>
+  <div class="col-xs-12 col-md-8">
+    <div class="row">
+      <div class="col-auto">
+        <a
+          mat-fab
+          color="primary"
+          [routerLink]="[ '../..' ]"
+        ><mat-icon>arrow_back</mat-icon></a>
+      </div>
+
+      <!-- titre de la page -->
+      <div class="col-auto">
+        <h1 class="mat-display-2 font-effect-shadow-multiple">
+          {{ project.name }}
+        </h1>
+      </div>
+    </div>
+
+
+    <mat-card>
+      <mat-card-content>
+        <!-- identifiant du projet -->
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            Identifiant
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-8">
+            {{ project.id }}
+          </div>
+        </div>
+
+
+        <!-- nom du projet -->
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            Nom
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-8">
+            {{ project.name }}
+          </div>
+        </div>
+
+
+        <!-- date de création du projet -->
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            Date de création
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-8">
+            {{ project.createdDate | date:'long' }}
+          </div>
+        </div>
+
+
+        <!-- projet créé par -->
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            Créé par
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-8">
+            {{ project.createdBy }}
+          </div>
+        </div>
+
+
+        <!-- date de dernière maj du projet -->
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            Dernière mise à jour
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-8">
+            {{ project.lastModifiedDate | date:'long' }}
+          </div>
+        </div>
+
+
+        <!-- dernière maj du projet réalisée par -->
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            Dernière mise à jour
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-8">
+            {{ project.lastModifiedBy }}
+          </div>
+        </div>
+      </mat-card-content>
+
+
+      <!-- actions sur le projet -->
+      <mat-card-actions align="end">
+        <a
+          mat-button
+          [routerLink]="[ '..', 'removing' ]"
+        >SUPPRIMER</a>
+        <a
+          mat-raised-button
+          color="primary"
+          [routerLink]="[ '..', 'updating' ]"
+        >MODIFIER</a>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

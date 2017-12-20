@@ -1,15 +1,43 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ListComponent } from '@features/projects/list/list.component';
+import { CreateComponent } from '@features/projects/views/create/create.component';
+import { ListComponent } from '@features/projects/views/list/list.component';
+import { ListResolver } from '@features/projects/views/list/list.resolver';
+import { ReadComponent } from '@features/projects/views/read/read.component';
+import { ReadResolver } from '@features/projects/views/read/read.resolver';
+import { UpdateComponent } from '@features/projects/views/update/update.component';
+import { RemoveComponent } from './views/remove/remove.component';
 
 
 const routes: Routes = [
-  { path: '', component: ListComponent }
+  {
+    path: '',
+    component: ListComponent,
+    resolve: { projects: ListResolver }
+  },
+  {
+    path: 'creating',
+    component: CreateComponent
+  },
+  {
+    path: ':projectId/reading',
+    component: ReadComponent,
+    resolve: { project: ReadResolver }
+  },
+  {
+    path: ':projectId/updating',
+    component: UpdateComponent
+  },
+  {
+    path: ':projectId/removing',
+    component: RemoveComponent
+  }
 ];
 
 
 @NgModule({
-  imports: [ RouterModule.forChild(routes) ],
-  exports: [ RouterModule ]
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
 })
-export class ProjectsRoutingModule { }
+export class ProjectsRoutingModule {
+}

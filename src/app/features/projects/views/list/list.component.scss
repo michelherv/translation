@@ -1,0 +1,20 @@
+@import "../../../../../assets/styles/bootstrap-mixins";
+
+
+@include media-breakpoint-only(xs) {
+  .col-xs-12:nth-child(n+2) {
+    margin-top: $grid-gutter-width;
+  }
+}
+
+@include media-breakpoint-only(sm) {
+  .col-sm-6:nth-child(n+3) {
+    margin-top: $grid-gutter-width;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .col-md-4:nth-child(n+4) {
+    margin-top: $grid-gutter-width;
+  }
+}

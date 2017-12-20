@@ -1,0 +1,50 @@
+<div class="row">
+  <!-- titre de la page -->
+  <div class="col-8">
+    <h1 class="mat-display-2 font-effect-shadow-multiple">
+      Projets
+    </h1>
+  </div>
+
+  <!-- lien pour ajouter un nouveau projet -->
+  <div class="col-4 text-right">
+    <a
+      mat-fab
+      color="primary"
+      [routerLink]="[ '.', 'creating' ]"
+    ><mat-icon>add</mat-icon></a>
+  </div>
+</div>
+
+
+<!-- liste des projets -->
+<div class="row">
+  <div
+    *ngFor="let project of projects"
+    class="col-xs-12 col-sm-6 col-md-4"
+  >
+    <mat-card>
+
+      <!-- nom du projet -->
+      <mat-card-title>
+        {{ project.name }}
+      </mat-card-title>
+
+      <!-- actions sur le projet -->
+      <mat-card-actions align="end">
+        <a
+          mat-button
+          [routerLink]="[ '.', project.id, 'reading' ]"
+        >DETAILS</a>
+        <a
+          mat-raised-button
+          color="primary"
+          [routerLink]="[ '.', project.id, 'groups' ]"
+        >GROUPES</a>
+      </mat-card-actions>
+
+    </mat-card>
+  </div>
+</div>
+
+

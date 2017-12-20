@@ -4,15 +4,19 @@ export abstract class AbstractDto {
   createdBy: string;
   lastModifiedDate: Date;
   lastModifiedBy: string;
+  enabled: boolean;
+  checked: boolean;
 
 
-  constructor(data: any) {
+  constructor(data: object) {
     data = data || {};
 
-    this.id = data.id;
-    this.createdDate = new Date(data.createdDate || new Date());
-    this.createdBy = data.createdBy;
-    this.lastModifiedDate = new Date(data.lastModifiedDate || new Date());
-    this.lastModifiedBy = data.lastModifiedBy;
+    this.id = data['id'];
+    this.createdDate = new Date(data['createdDate'] || new Date());
+    this.createdBy = data['createdBy'];
+    this.lastModifiedDate = new Date(data['lastModifiedDate'] || new Date());
+    this.lastModifiedBy = data['lastModifiedBy'];
+    this.enabled = !!data['enabled'];
+    this.checked = !!data['checked'];
   }
 }
