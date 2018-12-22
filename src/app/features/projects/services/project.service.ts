@@ -8,6 +8,6 @@ import { environment } from '@env/environment';
 @Injectable()
 export class ProjectService extends AbstractService<ProjectDto> {
   constructor(http: HttpClient) {
-    super(http, ProjectDto, `${environment.api}/projects`);
+    super(http, ProjectDto, `${environment.api.translation}/projects`);
   }
 }

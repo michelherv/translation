@@ -1,3 +1,8 @@
 export const environment = {
-  production: true
+  development: false,
+  production: true,
+  qa3: false,
+  api: {
+    translation: '/webservices/translation-api.wizbii.com:80'
+  }
 };

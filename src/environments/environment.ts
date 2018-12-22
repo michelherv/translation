@@ -4,6 +4,10 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
+  development: true,
   production: false,
-  api: 'http://translation-api.wizbii.me:3000'
+  qa3: false,
+  api: {
+    translation: '/webservices/translation'
+  }
 };
