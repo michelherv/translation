@@ -1,6 +1,6 @@
 {
   "/webservices/translation": {
-    "target": "http://translation-api.wizbii.me:3000",
+    "target": "http://translation-api.wizbii.me:80",
     "secure": false,
     "logLevel": "debug",
     "pathRewrite": {

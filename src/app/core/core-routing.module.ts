@@ -10,15 +10,15 @@ const routes: Routes = [
   },
   {
     path: 'projects',
-    loadChildren: '../features/projects/projects.module#ProjectsModule'
+    loadChildren: () => import('../features/projects/projects.module').then(m => m.ProjectsModule)
   },
   {
     path: 'projects/:projectId/groups',
-    loadChildren: '../features/groups/groups.module#GroupsModule'
+    loadChildren: () => import('../features/groups/groups.module').then(m => m.GroupsModule)
   },
   {
     path: 'projects/:projectId/groups/:groupId/translations',
-    loadChildren: '../features/translations/translations.module#TranslationsModule'
+    loadChildren: () => import('../features/translations/translations.module').then(m => m.TranslationsModule)
   }
 ];
 

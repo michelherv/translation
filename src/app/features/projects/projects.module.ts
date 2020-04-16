@@ -2,13 +2,11 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import {
-  MatButtonModule,
-  MatCardModule,
-  MatIconModule,
-  MatInputModule,
-  MatProgressSpinnerModule
-} from '@angular/material';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ProjectsRoutingModule } from '@features/projects/projects-routing.module';
 import { ProjectService } from '@features/projects/services/project.service';
 import { ListComponent } from '@features/projects/views/list/list.component';
@@ -29,8 +27,8 @@ import { UpdateComponent } from './views/update/update.component';
     HttpClientModule,
     MatButtonModule,
     MatCardModule,
-    MatInputModule,
     MatIconModule,
+    MatInputModule,
     MatProgressSpinnerModule,
     ProjectsRoutingModule,
   ],
